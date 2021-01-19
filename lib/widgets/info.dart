@@ -1,6 +1,7 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 const textColor = Color(0xff251201);
 
@@ -201,11 +202,7 @@ class Info extends StatelessWidget {
               padding: const EdgeInsets.all(18.0),
               child: Text(
                 'ВСЕ УСЛУГИ',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w700,
-                  color: textColor
-                ),
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700, color: textColor),
               ),
             ),
             alignment: Alignment.center,
@@ -236,18 +233,29 @@ class Info extends StatelessWidget {
             visible: visibleImages,
             child: SizedBox(
                 height: 180.0,
-                width: 350.0,
-                child: Carousel(showIndicator: true, borderRadius: true, images: images)),
+                child: Carousel(
+                  showIndicator: true,
+                  borderRadius: true,
+                  overlayShadow: false,
+                  indicatorBgPadding: 4.0,
+                 // radius: Radius.elliptical(12, 19),
+                  images: images,
+                )),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 24.0, top: 13),
-            child: Text(
-              'Service Name',
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.w700,
-                color: textColor,
-              ),
+            child: Row(
+              children: [
+                Text(
+                  'Service Name',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w700,
+                    color: textColor,
+                  ),
+                ),
+                IconButton(icon: Icon(Icons.keyboard_arrow_down, color: textColor,size: 12,), onPressed: null)
+              ],
             ),
           ),
           Visibility(

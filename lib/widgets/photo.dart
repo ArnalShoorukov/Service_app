@@ -11,11 +11,12 @@ class Photo extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
           height: 180.0,
-          width: 350.0,
           child: Carousel(
+            borderRadius: false,
             showIndicator: true,
+            overlayShadow: false,
+            indicatorBgPadding: 4,
             images: [
-              //_rotate(),
               NetworkImage(imageUrl),
               NetworkImage(imageUrl),
             ],
@@ -24,16 +25,6 @@ class Photo extends StatelessWidget {
     );
   }
 
-   _rotate(){
-    return Transform.translate(
-        //angle: -180 * math.pi /180,
-        //angle: 90 * math.pi/180,
-        offset: const Offset(0.0, 1.0),
-        child: Image.asset('assets/images/photo.jpeg', fit: BoxFit.fitHeight,)
-
-       );
-
-  }
 
 
 }

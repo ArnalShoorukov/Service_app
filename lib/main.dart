@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:service_app/service_page.dart';
+
+import 'main_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,11 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Service App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: ServicePage(),
+      home: MainPage(),
     );
   }
 }
